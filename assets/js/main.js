@@ -1,9 +1,3 @@
-/*
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	var	$window = $(window),
@@ -256,3 +250,14 @@
 		}
 
 })(jQuery);
+
+document.querySelectorAll(".row img").forEach(image=>{
+	image.onclick = () =>{
+		source = image.getAttribute("src")
+		document.querySelector(".popup-image img").src = source
+		document.querySelector(".popup-image").style.display = "block"
+	}
+})
+document.querySelector(".popup-image span").onclick = () => {
+	document.querySelector(".popup-image").style.display = "none"
+}
