@@ -2761,13 +2761,6 @@ input[type="radio"]:focus+label:before {
 	object-fit: cover;
 }
 
-#about_photo {
-	display: inline-block;
-	width: 70%;
-	height: auto;
-	text-align: center;
-}
-
 /* for smaller screen size  */
 @media (max-width: 768px) {
 	.popup-image img {
