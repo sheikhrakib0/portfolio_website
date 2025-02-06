@@ -64,6 +64,17 @@ hgroup {
     border-radius: 8px;
 }
 
+.container .about-image {
+    flex: 1;
+    /* Takes up equal space as the details */
+    min-width: 300px;
+    /* Ensures it doesn't shrink too much */
+    text-align: center;
+    /* Centers the image */
+    order: 1;
+    /* Default order */
+}
+
 
 
 /* Skills list styling */
