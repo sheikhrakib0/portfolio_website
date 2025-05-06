@@ -28,7 +28,7 @@ def predict():
          # Separate numerical and categorical
         cat_cols.append("smoking_status")
         X_num = df[num_cols]
-        full_cat_cols = list(cat_cols) + ["smoking_status"] if "smoking_status" not in cat_cols else list(cat_cols)
+        full_cat_cols = ["smoking_status"] if "smoking_status" not in cat_cols else list(cat_cols) + list(cat_cols)
         X_cat = df[full_cat_cols]
     
         # Transform categorical variables
