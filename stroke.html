@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ML Model Predictor</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, button { padding: 8px; margin: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Enter Your Inputs</h2>
+  
+  <!-- Example input fields -->
+
+  <label>Gender:</label>
+  <select id="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select><br>
+
+  <label>Age:</label>
+  <input type="number" id="age"><br>
+
+  <label>Have Hypertension:</label>
+  <select id="hypertension">
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+  </select><br>
+
+  <label>Have Heart Disease:</label>
+  <select id="heart_disease">
+    <option value="0">No</option>
+    <option value="1">Yes</option>
+  </select><br>
+
+  <label>Marital Status:</label>
+  <select id="ever_married">
+    <option value="No">No</option>
+    <option value="Yes">Yes</option>
+  </select><br>
+  
+  <label>Work Type:</label>
+  <select id="work_type">
+    <option value="children">children</option>
+    <option value="Govt_job">Govt_job</option>
+    <option value="Never_worked">Never_worked</option>
+    <option value="Private">Private</option>
+    <option value="Self_employed">Self_employed</option>
+  </select><br>
+
+  <label>Residence Type:</label>
+  <select id="Residence_type">
+    <option value="Urban">Urban</option>
+    <option value="Rural">Rural</option>
+  </select><br>
+
+  <label>Average Glucose Level:</label>
+  <input type="number" id="avg_glucose_level"><br>
+  
+  <label>BMI:</label>
+  <input type="number" id="bmi"><br>
+
+  <label>Smoking Stutus:</label>
+  <select id="smoking_status">
+    <option value="never smoked">never smoked</option>
+    <option value="formerly smoked">formerly smoked</option>
+    <option value="Unknown">Unknown</option>
+    <option value="smokes">Smokes</option>
+  </select><br>
+
+<!-- single_input = {
+    'gender': 'Male',
+    'age': 50,
+    'hypertension': 0,
+    'heart_disease': 0,
+    'ever_married': 'Yes',
+    'work_type': 'Private',
+    'Residence_type': 'Urban',
+    'avg_glucose_level': 100,
+    'bmi': 30,
+    'smoking_status': 'never smoked'
+} -->
+
+  <!-- Predict button -->
+  <button onclick="getPrediction()">Predict</button>
+
+  <!-- Where prediction result will be shown -->
+  <h3 id="result"></h3>
+
+  <script>
+    async function getPrediction() {
+      // Get input values
+      const gender = document.getElementById('gender').value;
+      const age = document.getElementById('age').value;
+      const hypertension = document.getElementById('hypertension').value;
+      const heart_disease = document.getElementById('heart_disease').value;
+      const ever_married = document.getElementById('ever_married').value;
+      const work_type = document.getElementById('work_type').value;
+      const Residence_type = document.getElementById('Residence_type').value;
+      const avg_glucose_level = document.getElementById('avg_glucose_level').value;
+      const bmi = document.getElementById('bmi').value;
+      const smoking_status = document.getElementById('smoking_status').value;
+
+      // Create the payload matching the backend's expected input
+      const inputData = {
+        gender: gender,
+        age: parseFloat(age),
+        hypertension: parseInt(hypertension),
+        heart_disease: parseInt(heart_disease),
+        ever_married: ever_married,
+        work_type: work_type,
+        Residence_type: Residence_type,
+        avg_glucose_level: parseFloat(avg_glucose_level),
+        bmi: parseFloat(bmi),
+        smoking_status:smoking_status
+      };
+
+      try {
+        // Send POST request to backend
+        const response = await fetch('http://localhost:5000/predict', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(inputData)
+        });
+
+        const data = await response.json();
+
+        // Show result
+        if (data.prediction !== undefined) {
+          document.getElementById('result').innerText = "Prediction: " + data.prediction;
+        } else {
+          document.getElementById('result').innerText = "Error: " + data.error;
+        }
+
+      } catch (err) {
+        document.getElementById('result').innerText = "Error: Could not connect to backend.";
+      }
+    }
+  </script>
+</body>
+</html>
