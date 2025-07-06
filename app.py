@@ -15,32 +15,19 @@ num_cols = model_data['numerical_cols']
 cat_cols = model_data['categorical_cols']
 encoded_cols = model_data['encoded_cols']
 
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
         # Get JSON data from frontend
         input_data = request.get_json()
 
-
         # Convert dict to DataFrame
         df = pd.DataFrame([input_data])
-
-         # Separate numerical and categorical
-        cat_cols.append("smoking_status")
-        X_num = df[num_cols]
-        full_cat_cols = ["smoking_status"] if "smoking_status" not in cat_cols else list(cat_cols) + list(cat_cols)
-        X_cat = df[full_cat_cols]
-    
-        # Transform categorical variables
-        X_cat_transformed = preprocessor.transform(X_cat)
-
-        # Concatenate numerical + transformed categorical
-        import numpy as np
-        x_train = np.concatenate([X_num.values, X_cat_transformed], axis=1)
-
+        df[encoded_cols] = preprocessor.transform(df)
+        X = df[num_cols + encoded_cols]
         # Make prediction
-        prediction = model.predict(x_train)
-
+        prediction = model.predict(X)
         return jsonify({'prediction': int(prediction[0])})
 
     except Exception as e:

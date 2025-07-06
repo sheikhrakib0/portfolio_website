@@ -1,16 +1,430 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Projects</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo">Hire Me</a>
+      </header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="active"><a href="projects.html">Projects</a></li>
+        </ul>
+        <ul class="icons">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/md-rakib-sheikh-11b1a4226/"
+              class="icon brands fa-linkedin"
+              ><span class="label">LinkedIn</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/sheikh.rakibb?mibextid=ZbWKwL"
+              class="icon brands fa-facebook-f"
+              ><span class="label">Facebook</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/rrr_express?igsh=MXdpbmprY21wN3Rt"
+              class="icon brands fa-instagram"
+              ><span class="label">Instagram</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/sheikhrakib0?tab=repositories"
+              class="icon brands fa-github"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Post -->
+        <section class="post">
+
+          <!-- Form -->
+          <h2>Enter The Input Features Correctly</h2>
+
+          <form method="post" action="submit">
+            <div class="row gtr-uniform">
+              <div class="col-6 col-12-xsmall">
+                <label>Gender</label>
+                <select name="Gender" id="gender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <div class="col-6 col-12-xsmall">
+                <label>Age</label>
+                <input
+                  type="number"
+                  name="age"
+                  id="age"
+                  value=""
+                  placeholder="Age"
+                  required
+                />
+              </div>
+              <div class="col-6 col-12-xsmall">
+                <label>Have Hypertension</label>
+                <select name="hypertension" id="hypertension">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </div>
+              <div class="col-6 col-12-xsmall">
+                <label>Have Heart Disease</label>
+                <select name="heart_disease" id="heart_disease">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </div>
+              <div class="col-6 col-12-xsmall">
+                <label>Marital Status</label>
+                <select name="ever_married" id="ever_married">
+                  <option value="No">No</option>
+                  <option value="Yes">Yes</option>
+                </select>
+              </div>
+              <div class="col-6 col-12-xsmall">
+                <label>Work Type</label>
+                <select name="work_type" id="work_type">
+                  <option value="children">Children</option>
+                  <option value="Govt_job">Government Job</option>
+                  <option value="Never_worked">Never Worked</option>
+                  <option value="Private">Private Job</option>
+                  <option value="Self_employed">Self Employed</option>
+                </select>
+              </div>
+              <div class="col-6 col-12-xsmall">
+                <label>Residence Type</label>
+                <select name="residence_type" id="residence_type">
+                  <option value="Urban">Urban</option>
+                  <option value="Rural">Rural</option>
+                </select>
+              </div>
+              <div class="col-6 col-12-xsmall">
+                <label>Average Glucose Level</label>
+                <input
+                  type="number"
+                  name="avg_glucose_level"
+                  id="avg_glucose_level"
+                  value=""
+                  placeholder="Average Glucose Level"
+                  required
+                />
+              </div>
+              <div class="col-6 col-12-xsmall">
+                <label>BMI</label>
+                <input
+                  type="number"
+                  name="bmi"
+                  id="bmi"
+                  value=""
+                  placeholder="BMI"
+                  required
+                />
+              </div>
+              <div class="col-6 col-12-xsmall">
+                <label>Smoking Status</label>
+                <select name="smoking_status" id="smoking_status">
+                  <option value="never smoked">Never Smoked</option>
+                  <option value="formerly smoked">Formerly Smoked</option>
+                  <option value="Unknown">Unknown</option>
+                  <option value="smokes">Smokes</option>
+                </select>
+              </div>
+              <!-- Break -->
+              <div class="col-6 col-12-small">
+                <input
+                  type="checkbox"
+                  id="demo-human"
+                  name="demo-human"
+                  checked
+                />
+                <label for="demo-human">I am a human</label>
+              </div>
+              
+              <!-- Break -->
+              <div class="col-12">
+                <ul class="actions fit">
+                  <li>
+                    <input onclick="getPrediction()" type="button" value="Predict Stroke"/>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </form>
+          <!-- Blockquote -->
+          <h2>Results from The Model is: </h2>
+          <p>1 = Likely to have stroke</br> 2 = Not likely to have Stroke</p>
+          <blockquote id="result">
+          </blockquote>
+          <hr />
+
+          <h3>Left &amp; Right</h3>
+          <p>
+            <span class="image left"><img src="images/pic08.jpg" alt="" /></span
+            >Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
+            sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
+            faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
+            adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
+            tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum
+            primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis
+            in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
+            ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
+            tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum
+            primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
+            volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque
+            praesent. Vestibulum ante ipsum primis in faucibus magna blandit
+            adipiscing eu felis iaculis.
+          </p>
+          <p>
+            <span class="image right"
+              ><img src="images/pic09.jpg" alt="" /></span
+            >Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
+            sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
+            faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
+            adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
+            tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum
+            primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis
+            in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
+            ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
+            tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum
+            primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
+            volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque
+            praesent. Vestibulum ante ipsum primis in faucibus magna blandit
+            adipiscing eu felis iaculis.
+          </p>
+
+          <hr />
+
+          <!-- Preformatted Code -->
+          <h2>Preformatted</h2>
+          <pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';
+</code></pre>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section>
+          <form method="post" action="#">
+            <div class="fields">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="3"></textarea>
+              </div>
+            </div>
+            <ul class="actions">
+              <li><input type="submit" value="Send Message" /></li>
+            </ul>
+          </form>
+        </section>
+        <section class="split contact">
+          <section class="alt">
+            <h3>
+              Email
+              <div class="icon">
+                <img src="https://img.icons8.com/nolan/64/email.png" />
+              </div>
+            </h3>
+            <p><a href="#">Rakibrakib0179@gmail.com</a></p>
+          </section>
+          <section>
+            <h3>
+              Phone
+              <div class="icon">
+                <img src="https://img.icons8.com/nolan/64/phone.png" />
+              </div>
+            </h3>
+            <p><a href="#">(+880) 179 229 900</a></p>
+          </section>
+          <section>
+            <h3>
+              Address
+              <div class="icon">
+                <img src="https://img.icons8.com/nolan/64/address.png" />
+              </div>
+            </h3>
+            <p>
+              1902 Somewhere Road #87257<br />
+              Tangail, Bangladesh
+            </p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/md-rakib-sheikh-11b1a4226/"
+                  class="icon brands alt fa-linkedin"
+                  ><span class="label">LinkedIn</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/sheikh.rakibb?mibextid=ZbWKwL"
+                  class="icon brands alt fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/rrr_express?igsh=MXdpbmprY21wN3Rt"
+                  class="icon brands alt fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/sheikhrakib0?tab=repositories"
+                  class="icon brands alt fa-github"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+
+      <div id="footer-heading">
+        <h2>
+          <span class="crimsoned">S</span>heikh
+          <span class="crimsoned">R</span>akib
+        </h2>
+        <h6>Your complete data solution</h6>
+      </div>
+
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul>
+          <li>&copy; copyright reserved</li>
+          <li>
+            Design:
+            <a href="https://sheikhrakib.netlify.app/">Sheikh Rakib</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+     <script>
+    async function getPrediction() {
+      // Get input values
+      const gender = document.getElementById('gender').value;
+      const age = document.getElementById('age').value;
+      const hypertension = document.getElementById('hypertension').value;
+      const heart_disease = document.getElementById('heart_disease').value;
+      const ever_married = document.getElementById('ever_married').value;
+      const work_type = document.getElementById('work_type').value;
+      const Residence_type = document.getElementById('residence_type').value;
+      const avg_glucose_level = document.getElementById('avg_glucose_level').value;
+      const bmi = document.getElementById('bmi').value;
+      const smoking_status = document.getElementById('smoking_status').value;
+
+      // Create the payload matching the backend's expected input
+      const inputData = {
+        gender: gender, //1
+        age: parseFloat(age), //2
+        hypertension: parseInt(hypertension), //3
+        heart_disease: parseInt(heart_disease), // 4
+        ever_married: ever_married, // 5
+        work_type: work_type, //6
+        Residence_type: Residence_type, //7
+        avg_glucose_level: parseFloat(avg_glucose_level), //8
+        bmi: parseFloat(bmi), //9
+        smoking_status:smoking_status // 10
+      };
+
+      try {
+        // Send POST request to backend
+        const response = await fetch('https://portfolio-website-kdq4.onrender.com/predict', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(inputData)
+        });
+
+        const data = await response.json();
+
+        // Show result
+        if (data.prediction !== undefined) {
+          document.getElementById('result').innerText = "Prediction: " + data.prediction;
+        } else {
+          document.getElementById('result').innerText = "Error: " + data.error;
+        }
+
+      } catch (err) {
+        document.getElementById('result').innerText = "Error: Could not connect to backend.";
+      }
+    }
+  </script>
+    <!--Scripts Links-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
+
+
+<!--
+
+<!DOCTYPE html>
+<html>
 <head>
   <title>ML Model Predictor</title>
   <style>
-    body { font-family: Arial; padding: 20px; }
+    body { font-family: Arial; padding: 20px; color: white; }
     input, button { padding: 8px; margin: 5px; }
+    label {color: white;}
   </style>
 </head>
 <body>
   <h2>Enter Your Inputs</h2>
   
-  <!-- Example input fields -->
+  //Example input fields
 
   <label>Gender:</label>
   <select id="gender">
@@ -81,10 +495,10 @@
     'smoking_status': 'never smoked'
 } -->
 
-  <!-- Predict button -->
+  <!--//Predict button 
   <button onclick="getPrediction()">Predict</button>
 
-  <!-- Where prediction result will be shown -->
+  <!-- Where prediction result will be shown 
   <h3 id="result"></h3>
 
   <script>
@@ -103,21 +517,21 @@
 
       // Create the payload matching the backend's expected input
       const inputData = {
-        gender: gender,
-        age: parseFloat(age),
-        hypertension: parseInt(hypertension),
-        heart_disease: parseInt(heart_disease),
-        ever_married: ever_married,
-        work_type: work_type,
-        Residence_type: Residence_type,
-        avg_glucose_level: parseFloat(avg_glucose_level),
-        bmi: parseFloat(bmi),
-        smoking_status:smoking_status
+        gender: gender, //1
+        age: parseFloat(age), //2
+        hypertension: parseInt(hypertension), //3
+        heart_disease: parseInt(heart_disease), // 4
+        ever_married: ever_married, // 5
+        work_type: work_type, //6
+        Residence_type: Residence_type, //7
+        avg_glucose_level: parseFloat(avg_glucose_level), //8
+        bmi: parseFloat(bmi), //9
+        smoking_status:smoking_status // 10
       };
 
       try {
         // Send POST request to backend
-        const response = await fetch('https://portfolio-website-kdq4.onrender.com/predict', {
+        const response = await fetch('http://localhost:5000/predict', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(inputData)
@@ -139,3 +553,4 @@
   </script>
 </body>
 </html>
+-->
