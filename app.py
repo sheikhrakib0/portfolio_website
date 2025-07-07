@@ -3,6 +3,7 @@ from flask_cors import CORS
 import joblib
 import pandas as pd
 import os
+from sklearn.compose import ColumnTransformer
 
 app = Flask(__name__)
 CORS(app)  # Allow frontend to call this backend
