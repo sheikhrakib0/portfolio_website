@@ -178,45 +178,41 @@
             </div>
           </form>
           <!-- Blockquote -->
-          <h2>Results from The Model is: </h2>
-          <p>1 = Likely to have stroke</br> 2 = Not likely to have Stroke</p>
-          <blockquote id="result">
-          </blockquote>
+          <div style="background-color: lightgray;padding: 10px;">
+            <h2>Results from The Model</h2>
+            <span id="result"></span>
+            <div id="spinner" style="display: none;">
+              <div style="border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto;"></div>
+              <p style="text-align: center;">Processing your request...</p>
+            </div>
+            <p>1 = Likely to have stroke</br> 2 = Not likely to have Stroke</p>
+          </div>
+          <style>
+            @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+            }
+          </style>
+
           <hr />
 
-          <h3>Left &amp; Right</h3>
+          <h3>Brain Stroke</h3>
           <p>
-            <span class="image left"><img src="images/pic08.jpg" alt="" /></span
-            >Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
-            sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
-            faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-            adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
-            tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum
-            primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis
-            in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
-            ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
-            tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum
-            primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
-            volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque
-            praesent. Vestibulum ante ipsum primis in faucibus magna blandit
-            adipiscing eu felis iaculis.
-          </p>
-          <p>
-            <span class="image right"
-              ><img src="images/pic09.jpg" alt="" /></span
-            >Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
-            sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
-            faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-            adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
-            tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum
-            primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis
-            in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
-            ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
-            tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum
-            primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
-            volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque
-            praesent. Vestibulum ante ipsum primis in faucibus magna blandit
-            adipiscing eu felis iaculis.
+            <span class="image left"><img src="images/brain.png" alt="" /></span
+            >A brain stroke, also known simply as a stroke, occurs when the blood supply to a part of the brain is interrupted or reduced, preventing brain tissue from getting the oxygen and nutrients it needs. Without immediate medical attention, brain cells begin to die within minutes. There are two main types of strokes:
+            <b>Ischemic Stroke</b>(This is the most common type, accounting for about 87% of all strokes. It occurs when a blood clot blocks or narrows a blood vessel in the brain.)
+            <b>Hemorrhagic Stroke</b>(This occurs when a weakened blood vessel in the brain ruptures and bleeds into the surrounding tissue.)</br>
+            <b>Risk Factors</b><br>
+            Several factors increase stroke risk: <br>
+            * High blood pressure <br>
+            * Diabetes <br>
+            * Smoking <br>
+            * High cholesterol <br>
+            * Obesity <br>
+            * Sedentary lifestyle <br>
+            * Family history of stroke <br>
+            The model used for prediction here is Logistic Regression. Among several models such as Logistic Regression, Decision Tree, Support Vector Machine, Random Forest, K-Nearest Neighbor, Naive Bayes, LightGBM, XGBoost. The dataset was imbalanced, So we used a popular oversampling method called SMOTE to reduce that effect and trained our models with the new balanced dataset. After that Logistic Regression outperformed all the models. If you are interested please visit this link to see the full analysis. <br>
+            <a href="https://github.com/sheikhrakib0/Stroke-Prediction-Using-ML/blob/main/StrokePrediction.ipynb">Github link</a>
           </p>
 
           <hr />
@@ -224,15 +220,13 @@
           <!-- Preformatted Code -->
           <h2>Preformatted</h2>
           <pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';
-</code></pre>
+          while (!deck.isInOrder()) {
+          print 'Iteration ' + i;
+          deck.shuffle();
+           i++;
+          }
+          print 'It took ' + i + ' iterations to sort the deck.';
+        </code></pre>
         </section>
       </div>
 
@@ -349,6 +343,10 @@ print 'It took ' + i + ' iterations to sort the deck.';
     <!-- Scripts -->
      <script>
     async function getPrediction() {
+      // Showing spinner
+      document.getElementById('spinner').style.display = 'block';
+      //Clearing previous results
+      document.getElementById('result').innerHTML = '';
       // Get input values
       const gender = document.getElementById('gender').value;
       const age = document.getElementById('age').value;
@@ -384,10 +382,11 @@ print 'It took ' + i + ' iterations to sort the deck.';
         });
 
         const data = await response.json();
-
+        // Hide spinner when response is received
+        document.getElementById('spinner').style.display = 'none';
         // Show result
         if (data.prediction !== undefined) {
-          document.getElementById('result').innerText = "Prediction: " + data.prediction;
+          document.getElementById('result').innerText = "PREDICTION: " + data.prediction;
         } else {
           document.getElementById('result').innerText = "Error: " + data.error;
         }

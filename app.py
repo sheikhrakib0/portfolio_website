@@ -30,7 +30,7 @@ def predict():
         X = df[num_cols + encoded_cols]
         # Make prediction
         prediction = model.predict(X)
-        return jsonify({'prediction': int(prediction[0])})
+        return jsonify({int(prediction[0])})
 
     except Exception as e:
         return jsonify({'error': str(e)})
