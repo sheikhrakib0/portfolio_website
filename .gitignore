@@ -1,0 +1,11 @@
+# Ignore the node dependency folder
+node_modules/
+
+# Ignore the Python virtual environment
+.venv/
+
+# Ignore all log files
+*.log
+
+# Ignore environment variable files
+.env
