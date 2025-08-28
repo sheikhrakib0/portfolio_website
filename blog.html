@@ -67,12 +67,33 @@
         <!-- Post -->
         <section class="post">
           <header class="major">
-            <h1>My First Blog Post</h1>
-            <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam sed facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam.</p>
+            <h1>Prophet in Time Series Forecasting</h1>
+            <p>Prophet is a forecasting algorithm developed by Facebook designed to handle time series data. It is specifically useful for forecasting data that exhibits seasonality, trends, and other recurring patterns. Prophet is robust and can work with missing data, outliers, and shifts in the trend due to special events. It is flexible and intended for both business and data science applications, making it useful for tasks like demand forecasting, traffic prediction, and sales forecasting.</p>
           </header>
           <div class="image main"><img src="https://placehold.co/800x450" alt="" /></div>
-          <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar et justo. Nunc blandit, metus vitae ultrices porttitor, enim nullanim magna, eget sed.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ut dolor ac magna facilisis ultricies. Pellentesque sordales ipsum magna, ac convallis ex finibus eget. In vel libero vitae erat interdum viverra. Cras quis ipsum eget mi posuere laoreet. Donec facilisis posuere egestas. Fusce congue ullamcorper id tempor erat.</p>
+          <p><b>Key Features of Prophet:</b><br>
+            <b>Handling Seasonal Trends:</b> Prophet can handle yearly, weekly, and daily seasonality patterns.
+            Incorporates Holidays and Special Events: It allows the user to define holidays and special events that may affect the data.
+            Non-Stationary Data: Unlike traditional time series models like ARIMA, Prophet is effective with non-stationary data (data with trends and seasonality that change over time).
+            Missing Data & Outliers: It is robust to missing data points and outliers, which means it can still produce reliable forecasts even if parts of the data are incomplete or noisy. <br>
+            <b>Modeling Capacity:</b> Prophet decomposes the time series into three main components: trend, seasonality, and holidays or special events. <br>
+            <b>How Prophet Algorithm Works:</b> <br>
+            <b>Trend Component:</b>
+            Prophet fits a piecewise linear or logistic growth curve to model the overall trend in the time series.
+            It allows for sudden changes (changepoints) in the trend, and it automatically selects those changepoints based on the data.
+            The trend can be either linear or saturating, depending on whether you choose a linear or logistic growth model. <br>
+            <b>Seasonality Component:</b>
+            Prophet models the seasonality (recurring patterns in the data) using Fourier series to capture cycles such as yearly or weekly seasonality.
+            The user can specify whether the seasonality should be handled on a daily, weekly, monthly, or yearly basis, and the algorithm can also detect these patterns automatically. <br>
+            <b>Holiday Effects:</b>
+            Special events (like holidays or promotions) can cause significant shifts in the time series. Prophet allows users to include these manually or automatically so that the algorithm can account for them. <br>
+            <b>Changepoints:</b>
+            Changepoints refer to moments where the trend in the data changes significantly (e.g., a sudden drop in sales or traffic).
+            Prophet detects these changepoints automatically or allows the user to input them manually. <br>
+            <b>Forecasting:</b> <br>
+            After fitting the trend, seasonality, and holiday components, Prophet combines them to make future predictions.
+            It also provides uncertainty intervals for forecasts, helping users understand the confidence in the predictions.</p> <br>
+          <p><b>Formula BreakDown:</b></p>
         </section>
       </div>
 
