@@ -24,10 +24,38 @@ hgroup {
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
     /* Ensures responsiveness */
     gap: 1.5rem;
     /* Adds space between divs */
 }
+
+.grid>* {
+    flex: 1;
+    /* Makes both blocks equal width */
+    min-width: 300px;
+    /* Minimum width before wrapping */
+    max-width: 500px;
+    /* Maximum width of each block */
+}
+
+#skill_details {
+    line-height: 1.3;
+    /* Adjust this value as needed */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+}
+
+#skill_details li {
+    line-height: 1.3;
+    /* Consistent line height */
+    margin-bottom: 0rem;
+    /* Reduce space between list items */
+}
+
 
 /* Style for the div containing about details */
 .grid .about-details {
@@ -84,7 +112,7 @@ hgroup {
 }
 
 #skills ul li {
-    padding: 0.5rem 0;
+    padding: 0.2rem 0;
     font-size: 1.1rem;
 }
 
