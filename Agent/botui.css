@@ -1,0 +1,219 @@
+/* Main wrapper to hold sidebar and chat */
+
+.chatbot {
+    display: flex;
+    width: 100%; /* Adjust as needed */
+    max-width: 1000px;
+    height: 90vh;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    }
+
+/* Sidebar Styling */
+.chat_sidebar {
+    width: 260px;
+    background-color: #f0f2f5;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease; /* Smooth collapse */
+    padding: 15px;
+    z-index: 10;
+    }
+
+@media (max-width: 768px) {
+    .chat_sidebar {
+        position: absolute;
+        height: 100%;
+        transform: translateX(-100%);
+        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+        }
+    .chat_sidebar.active {
+        transform: translateX(0);
+        }
+    }
+
+/* Class to hide sidebar */
+.chat_sidebar.collapsed {
+    width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border: none;
+    }
+
+.chat_sidebar h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    }
+
+.new-chat-btn {
+    background-color: #166fe2;
+    color: white;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    }
+.new-chat-btn:hover {
+    background-color: #042653;
+    }
+
+.history-items {
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+    }
+
+.history-item {
+    padding: 5px;
+    margin-bottom: 5px;
+    /* background: #fff; */
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+.history-item:hover {
+    background: #e1e4e8;
+    }
+
+.doc-items {
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+    }
+
+.doc-item {
+    padding: 5px;
+    margin-bottom: 5px;
+    /* background: #fff; */
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+.doc-item:hover {
+    background: #e1e4e8;
+    }
+/* Main Chat Area Container */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    min-width: 0;
+     }
+
+/* Header with Toggle Button */
+.chat-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    }
+
+.toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    }
+
+.toggle-btn:hover {
+    background: #f0f0f0;
+    }
+
+@media (max-width: 768px) {
+    .toggle-btn {
+        display: block;
+        }
+    }
+
+/* The Scrollable Window */
+.chat-window {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    }
+
+/* Chat Bubbles */
+.message {
+    max-width: 80%;
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    }
+
+.ai-reply {
+    align-self: flex-start;
+    background-color: #f1f3f4;
+    color: #202124;
+    }
+
+.user-input {
+    align-self: flex-end;
+    background-color: #1a73e8;
+    color: white;
+    }
+
+/* Bottom Input */
+.input-area {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #eee;
+    }
+
+.input-area input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    outline: none;
+    font-size: 16px;
+    }
+
+.input-area button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 24px;
+    cursor: pointer;
+    }
+
+/* Overlay for mobile when sidebar is open */
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 5;
+    }
+
+@media (max-width: 768px) {
+    .overlay.active { display: block; }
+    }

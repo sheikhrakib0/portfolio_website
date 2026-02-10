@@ -1,0 +1,8 @@
+{
+    "editor.autoIndentOnPaste": true,
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.autoIndent": "full",
+    "files.autoSaveDelay": 20000
+}
