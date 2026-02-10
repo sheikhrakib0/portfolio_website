@@ -14,6 +14,10 @@
     position: relative;
     }
 
+.bot-header {
+    margin-bottom: 5px;
+}
+
 /* Sidebar Styling */
 .chat_sidebar {
     width: 260px;
@@ -68,18 +72,19 @@
 
 .history-items {
     padding: 5px;
-    margin-bottom: 15px;
-    background-color: #f0f0f0;
+    background-color: #f7f7f7;
+    max-height: 150px;
+    overflow-y: auto;
     }
 
 .history-item {
-    padding: 5px;
+    padding: 3px 5px;
     margin-bottom: 5px;
     /* background: #fff; */
     border-radius: 15px;
     cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -93,16 +98,18 @@
     padding: 5px;
     margin-bottom: 15px;
     background-color: #f0f0f0;
+    max-height: 150px;
+    overflow-y: auto;
     }
 
 .doc-item {
-    padding: 5px;
+    padding: 3px 5px;
     margin-bottom: 5px;
     /* background: #fff; */
     border-radius: 15px;
     cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

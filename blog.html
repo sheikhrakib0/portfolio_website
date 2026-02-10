@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
 	Personal Portfolio website for myself
 -->
 <html>
   <head>
     <title>Blogs</title>
+    <link rel="shortcut icon" type="image/png" href="/images/logo-white.png" />
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -33,28 +34,32 @@
         <ul class="icons">
           <li>
             <a
-              href="https://www.linkedin.com/in/md-rakib-sheikh-11b1a4226/" title="LinkedIn Profile"
+              href="https://www.linkedin.com/in/md-rakib-sheikh-11b1a4226/"
+              title="LinkedIn Profile"
               class="icon brands fa-linkedin"
               ><span class="label">LinkedIn</span></a
             >
           </li>
           <li>
             <a
-              href="https://www.facebook.com/sheikh.rakibb?mibextid=ZbWKwL" title="Facebook Profile"
+              href="https://www.facebook.com/sheikh.rakibb?mibextid=ZbWKwL"
+              title="Facebook Profile"
               class="icon brands fa-facebook-f"
               ><span class="label">Facebook</span></a
             >
           </li>
           <li>
             <a
-              href="https://www.instagram.com/rrr_express?igsh=MXdpbmprY21wN3Rt" title="Instagram Profile"
+              href="https://www.instagram.com/rrr_express?igsh=MXdpbmprY21wN3Rt"
+              title="Instagram Profile"
               class="icon brands fa-instagram"
               ><span class="label">Instagram</span></a
             >
           </li>
           <li>
             <a
-              href="https://github.com/sheikhrakib0?tab=repositories" title="GitHub Repositories"
+              href="https://github.com/sheikhrakib0?tab=repositories"
+              title="GitHub Repositories"
               class="icon brands fa-github"
               ><span class="label">GitHub</span></a
             >
@@ -68,31 +73,65 @@
         <section class="post">
           <header class="major">
             <h1>Prophet in Time Series Forecasting</h1>
-            <p>Prophet is a forecasting algorithm developed by Facebook designed to handle time series data. It is specifically useful for forecasting data that exhibits seasonality, trends, and other recurring patterns. Prophet is robust and can work with missing data, outliers, and shifts in the trend due to special events. It is flexible and intended for both business and data science applications, making it useful for tasks like demand forecasting, traffic prediction, and sales forecasting.</p>
+            <p>
+              Prophet is a forecasting algorithm developed by Facebook designed
+              to handle time series data. It is specifically useful for
+              forecasting data that exhibits seasonality, trends, and other
+              recurring patterns. Prophet is robust and can work with missing
+              data, outliers, and shifts in the trend due to special events. It
+              is flexible and intended for both business and data science
+              applications, making it useful for tasks like demand forecasting,
+              traffic prediction, and sales forecasting.
+            </p>
           </header>
-          <div class="image main"><img src="https://placehold.co/800x450" alt="" /></div>
-          <p><b>Key Features of Prophet:</b><br>
-            <b>Handling Seasonal Trends:</b> Prophet can handle yearly, weekly, and daily seasonality patterns.
-            Incorporates Holidays and Special Events: It allows the user to define holidays and special events that may affect the data.
-            Non-Stationary Data: Unlike traditional time series models like ARIMA, Prophet is effective with non-stationary data (data with trends and seasonality that change over time).
-            Missing Data & Outliers: It is robust to missing data points and outliers, which means it can still produce reliable forecasts even if parts of the data are incomplete or noisy. <br>
-            <b>Modeling Capacity:</b> Prophet decomposes the time series into three main components: trend, seasonality, and holidays or special events. <br>
-            <b>How Prophet Algorithm Works:</b> <br>
+          <div class="image main">
+            <img src="https://placehold.co/800x450" alt="" />
+          </div>
+          <p>
+            <b>Key Features of Prophet:</b><br />
+            <b>Handling Seasonal Trends:</b> Prophet can handle yearly, weekly,
+            and daily seasonality patterns. Incorporates Holidays and Special
+            Events: It allows the user to define holidays and special events
+            that may affect the data. Non-Stationary Data: Unlike traditional
+            time series models like ARIMA, Prophet is effective with
+            non-stationary data (data with trends and seasonality that change
+            over time). Missing Data & Outliers: It is robust to missing data
+            points and outliers, which means it can still produce reliable
+            forecasts even if parts of the data are incomplete or noisy. <br />
+            <b>Modeling Capacity:</b> Prophet decomposes the time series into
+            three main components: trend, seasonality, and holidays or special
+            events. <br />
+            <b>How Prophet Algorithm Works:</b> <br />
             <b>Trend Component:</b>
-            Prophet fits a piecewise linear or logistic growth curve to model the overall trend in the time series.
-            It allows for sudden changes (changepoints) in the trend, and it automatically selects those changepoints based on the data.
-            The trend can be either linear or saturating, depending on whether you choose a linear or logistic growth model. <br>
+            Prophet fits a piecewise linear or logistic growth curve to model
+            the overall trend in the time series. It allows for sudden changes
+            (changepoints) in the trend, and it automatically selects those
+            changepoints based on the data. The trend can be either linear or
+            saturating, depending on whether you choose a linear or logistic
+            growth model. <br />
             <b>Seasonality Component:</b>
-            Prophet models the seasonality (recurring patterns in the data) using Fourier series to capture cycles such as yearly or weekly seasonality.
-            The user can specify whether the seasonality should be handled on a daily, weekly, monthly, or yearly basis, and the algorithm can also detect these patterns automatically. <br>
+            Prophet models the seasonality (recurring patterns in the data)
+            using Fourier series to capture cycles such as yearly or weekly
+            seasonality. The user can specify whether the seasonality should be
+            handled on a daily, weekly, monthly, or yearly basis, and the
+            algorithm can also detect these patterns automatically. <br />
             <b>Holiday Effects:</b>
-            Special events (like holidays or promotions) can cause significant shifts in the time series. Prophet allows users to include these manually or automatically so that the algorithm can account for them. <br>
+            Special events (like holidays or promotions) can cause significant
+            shifts in the time series. Prophet allows users to include these
+            manually or automatically so that the algorithm can account for
+            them. <br />
             <b>Changepoints:</b>
-            Changepoints refer to moments where the trend in the data changes significantly (e.g., a sudden drop in sales or traffic).
-            Prophet detects these changepoints automatically or allows the user to input them manually. <br>
-            <b>Forecasting:</b> <br>
-            After fitting the trend, seasonality, and holiday components, Prophet combines them to make future predictions.
-            It also provides uncertainty intervals for forecasts, helping users understand the confidence in the predictions.</p> <br>
+            Changepoints refer to moments where the trend in the data changes
+            significantly (e.g., a sudden drop in sales or traffic). Prophet
+            detects these changepoints automatically or allows the user to input
+            them manually. <br />
+            <b>Forecasting:</b> <br />
+            After fitting the trend, seasonality, and holiday components,
+            Prophet combines them to make future predictions. It also provides
+            uncertainty intervals for forecasts, helping users understand the
+            confidence in the predictions.
+          </p>
+          <br />
           <p><b>Formula BreakDown:</b></p>
         </section>
       </div>
@@ -156,28 +195,32 @@
             <ul class="icons alt">
               <li>
                 <a
-                  href="https://www.linkedin.com/in/md-rakib-sheikh-11b1a4226/" title="LinkedIn Profile"
+                  href="https://www.linkedin.com/in/md-rakib-sheikh-11b1a4226/"
+                  title="LinkedIn Profile"
                   class="icon brands alt fa-linkedin"
                   ><span class="label">LinkedIn</span></a
                 >
               </li>
               <li>
                 <a
-                  href="https://www.facebook.com/sheikh.rakibb?mibextid=ZbWKwL" title="Facebook Profile"
+                  href="https://www.facebook.com/sheikh.rakibb?mibextid=ZbWKwL"
+                  title="Facebook Profile"
                   class="icon brands alt fa-facebook-f"
                   ><span class="label">Facebook</span></a
                 >
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/rrr_express?igsh=MXdpbmprY21wN3Rt" title="Instagram Profile"
+                  href="https://www.instagram.com/rrr_express?igsh=MXdpbmprY21wN3Rt"
+                  title="Instagram Profile"
                   class="icon brands alt fa-instagram"
                   ><span class="label">Instagram</span></a
                 >
               </li>
               <li>
                 <a
-                  href="https://github.com/sheikhrakib0?tab=repositories" title="GitHub Repositories"
+                  href="https://github.com/sheikhrakib0?tab=repositories"
+                  title="GitHub Repositories"
                   class="icon brands alt fa-github"
                   ><span class="label">GitHub</span></a
                 >
