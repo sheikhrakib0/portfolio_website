@@ -1,0 +1,111 @@
+/* ================= CHAT LAYOUT ================= */
+
+.chat-container {
+  display: flex;
+  height: 600px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Sidebar */
+.chat-sidebar {
+  width: 25%;
+  background: #111;
+  color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-sidebar h3 {
+  margin-bottom: 10px;
+}
+
+.chat-sidebar button {
+  padding: 8px;
+  margin-bottom: 15px;
+  background: crimson;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.chat-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chat-sidebar li {
+  padding: 8px;
+  margin-bottom: 5px;
+  background: #222;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.chat-sidebar li.active,
+.chat-sidebar li:hover {
+  background: crimson;
+}
+
+/* Main Chat */
+.chat-main {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+}
+
+.chat-header {
+  padding: 10px;
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.message {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  max-width: 70%;
+}
+
+.message.user {
+  background: crimson;
+  color: white;
+  margin-left: auto;
+}
+
+.message.bot {
+  background: #ddd;
+  color: black;
+}
+
+/* Input Area */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.chat-input button {
+  padding: 10px 15px;
+  background: crimson;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

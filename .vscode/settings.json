@@ -4,5 +4,8 @@
     "files.autoSave": "afterDelay",
     "editor.defaultFormatter": "vscode.html-language-features",
     "editor.autoIndent": "full",
-    "files.autoSaveDelay": 20000
+    "files.autoSaveDelay": 20000,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    }
 }

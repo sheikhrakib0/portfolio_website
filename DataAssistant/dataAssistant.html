@@ -1,100 +1,134 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Projects</title>
-    <link rel="shortcut icon" type="image/png" href="../images/logo-white.png" />
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="../assets/css/noscript.css"
-    /></noscript>
-  </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- Header -->
-      <header id="header">
-        <a href="index.html" class="logo">Hire Me</a>
-      </header>
 
-      <!-- Nav -->
-      <nav id="nav">
-        <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="active"><a href="projects.html">Projects</a></li>
-        </ul>
-        <ul class="icons">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/md-rakib-sheikh-11b1a4226/" title="LinkedIn Profile"
-              class="icon brands fa-linkedin"
-              ><span class="label">LinkedIn</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/sheikh.rakibb?mibextid=ZbWKwL" title="Facebook Profile"
-              class="icon brands fa-facebook-f"
-              ><span class="label">Facebook</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/rrr_express?igsh=MXdpbmprY21wN3Rt" title="Instagram Profile"
-              class="icon brands fa-instagram"
-              ><span class="label">Instagram</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/sheikhrakib0?tab=repositories" title="GitHub Repositories"
-              class="icon brands fa-github"
-              ><span class="label">GitHub</span></a
-            >
-          </li>
-        </ul>
-      </nav>
+<head>
+  <title>Projects</title>
+  <link rel="shortcut icon" type="image/png" href="../images/logo-white.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="dataAssistant.css" />
+  <noscript>
+    <link rel="stylesheet" href="../assets/css/noscript.css" />
+  </noscript>
+</head>
 
-      <!-- Main -->
-      <div id="main">
-        <!-- Post -->
-        <section class="post">
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Hire Me</a>
+    </header>
 
-          <!-- Form -->
-          <h2>Enter The Input Features Correctly</h2>
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="active"><a href="projects.html">Projects</a></li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://www.linkedin.com/in/md-rakib-sheikh-11b1a4226/" title="LinkedIn Profile"
+            class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/sheikh.rakibb?mibextid=ZbWKwL" title="Facebook Profile"
+            class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/rrr_express?igsh=MXdpbmprY21wN3Rt" title="Instagram Profile"
+            class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+        </li>
+        <li>
+          <a href="https://github.com/sheikhrakib0?tab=repositories" title="GitHub Repositories"
+            class="icon brands fa-github"><span class="label">GitHub</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+      <!-- Post -->
+      <section class="post">
+
+        <!-- ================= CHAT SECTION ================= -->
+        <h2>AI Data Assistant</h2>
+        <h1>Note: db_path was error. corrected that but not deployed. have to deploy and check the response of the
+          upload process. then need to fix the selection error,and then need to check the ask route</h1>
+
+        <div class="chat-container">
+
+          <!-- Sidebar -->
+          <div class="chat-sidebar">
+            <h3>Documents</h3>
+
+            <input type="file" id="fileInput" hidden />
+            <button onclick="triggerUpload()">+ Upload File</button>
+
+            <ul id="fileList"></ul>
+          </div>
+
+          <!-- Main Chat Area -->
+          <div class="chat-main">
+
+            <div class="chat-header">
+              <h3>Chat with Document</h3>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+              <div class="message bot">
+                Hello Rakib 👋 Ask me anything about your document.
+              </div>
+            </div>
+
+            <div class="chat-input">
+              <input type="text" id="userInput" placeholder="Ask a question..." />
+              <button onclick="sendMessage()">Send</button>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- ================= END CHAT SECTION ================= -->
 
 
-          <hr />
+        <hr />
 
-          <h3>Brain Stroke</h3>
-          <p>
-            <span class="image left"><img src="../images/brain.png" alt="" /></span
-            >A brain stroke, also known simply as a stroke, occurs when the blood supply to a part of the brain is interrupted or reduced, preventing brain tissue from getting the oxygen and nutrients it needs. Without immediate medical attention, brain cells begin to die within minutes. There are two main types of strokes:
-            <b>Ischemic Stroke</b>(This is the most common type, accounting for about 87% of all strokes. It occurs when a blood clot blocks or narrows a blood vessel in the brain.)
-            <b>Hemorrhagic Stroke</b>(This occurs when a weakened blood vessel in the brain ruptures and bleeds into the surrounding tissue.)</br>
-            <b>Risk Factors</b><br>
-            Several factors increase stroke risk: <br>
-            * High blood pressure <br>
-            * Diabetes <br>
-            * Smoking <br>
-            * High cholesterol <br>
-            * Obesity <br>
-            * Sedentary lifestyle <br>
-            * Family history of stroke <br>
-            The model used for prediction here is Logistic Regression. Among several models such as Logistic Regression, Decision Tree, Support Vector Machine, Random Forest, K-Nearest Neighbor, Naive Bayes, LightGBM, XGBoost. The dataset was imbalanced, So we used a popular oversampling method called SMOTE to reduce that effect and trained our models with the new balanced dataset. After that Logistic Regression outperformed all the models. If you are interested please visit this link to see the full analysis. <br>
-            <a href="https://github.com/sheikhrakib0/Stroke-Prediction-Using-ML/blob/main/StrokePrediction.ipynb">Github link</a>
-          </p>
+        <h3>About this Project</h3>
+        <p>
+          <span class="image left"><img src="../images/brain.png" alt="" /></span>A brain stroke, also known simply as a
+          stroke, occurs when the blood supply to a part of the brain is interrupted or reduced, preventing brain tissue
+          from getting the oxygen and nutrients it needs. Without immediate medical attention, brain cells begin to die
+          within minutes. There are two main types of strokes:
+          <b>Ischemic Stroke</b>(This is the most common type, accounting for about 87% of all strokes. It occurs when a
+          blood clot blocks or narrows a blood vessel in the brain.)
+          <b>Hemorrhagic Stroke</b>(This occurs when a weakened blood vessel in the brain ruptures and bleeds into the
+          surrounding tissue.)</br>
+          <b>Risk Factors</b><br>
+          Several factors increase stroke risk: <br>
+          * High blood pressure <br>
+          * Diabetes <br>
+          * Smoking <br>
+          * High cholesterol <br>
+          * Obesity <br>
+          * Sedentary lifestyle <br>
+          * Family history of stroke <br>
+          The model used for prediction here is Logistic Regression. Among several models such as Logistic Regression,
+          Decision Tree, Support Vector Machine, Random Forest, K-Nearest Neighbor, Naive Bayes, LightGBM, XGBoost. The
+          dataset was imbalanced, So we used a popular oversampling method called SMOTE to reduce that effect and
+          trained our models with the new balanced dataset. After that Logistic Regression outperformed all the models.
+          If you are interested please visit this link to see the full analysis. <br>
+          <a href="https://github.com/sheikhrakib0/Stroke-Prediction-Using-ML/blob/main/StrokePrediction.ipynb">Github
+            link</a>
+        </p>
 
-          <hr />
+        <hr />
 
-          <!-- Preformatted Code -->
-          <h2>Preformatted</h2>
-          <pre><code>i = 0;
+        <!-- Preformatted Code -->
+        <h2>Preformatted</h2>
+        <pre><code>i = 0;
           while (!deck.isInOrder()) {
           print 'Iteration ' + i;
           deck.shuffle();
@@ -102,126 +136,260 @@
           }
           print 'It took ' + i + ' iterations to sort the deck.';
         </code></pre>
-        </section>
-      </div>
-
-      <!-- Footer -->
-      <footer id="footer">
-        <section>
-          <form method="post" action="#">
-            <div class="fields">
-              <div class="field">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" />
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" />
-              </div>
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="3"></textarea>
-              </div>
-            </div>
-            <ul class="actions">
-              <li><input type="submit" value="Send Message" /></li>
-            </ul>
-          </form>
-        </section>
-        <section class="split contact">
-          <section class="alt">
-            <h3>
-              Email
-              <div class="icon">
-                <img src="https://img.icons8.com/nolan/64/email.png" />
-              </div>
-            </h3>
-            <p><a href="#">Rakibrakib0179@gmail.com</a></p>
-          </section>
-          <section>
-            <h3>
-              Phone
-              <div class="icon">
-                <img src="https://img.icons8.com/nolan/64/phone.png" />
-              </div>
-            </h3>
-            <p><a href="#">(+880) 179 229 900</a></p>
-          </section>
-          <section>
-            <h3>
-              Address
-              <div class="icon">
-                <img src="https://img.icons8.com/nolan/64/address.png" />
-              </div>
-            </h3>
-            <p>
-              1902 Los Santosh<br />
-              Tangail, Bangladesh
-            </p>
-          </section>
-          <section>
-            <h3>Social</h3>
-            <ul class="icons alt">
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/md-rakib-sheikh-11b1a4226/" title="LinkedIn Profile"
-                  class="icon brands alt fa-linkedin"
-                  ><span class="label">LinkedIn</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.facebook.com/sheikh.rakibb?mibextid=ZbWKwL" title="Facebook Profile"
-                  class="icon brands alt fa-facebook-f"
-                  ><span class="label">Facebook</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/rrr_express?igsh=MXdpbmprY21wN3Rt" title="Instagram Profile"
-                  class="icon brands alt fa-instagram"
-                  ><span class="label">Instagram</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/sheikhrakib0?tab=repositories" title="GitHub Repositories"
-                  class="icon brands alt fa-github"
-                  ><span class="label">GitHub</span></a
-                >
-              </li>
-            </ul>
-          </section>
-        </section>
-      </footer>
-
-      <div id="footer-heading">
-        <h2>
-          <span class="crimsoned">S</span>heikh
-          <span class="crimsoned">R</span>akib
-        </h2>
-        <h6>Your complete data solution</h6>
-      </div>
-
-      <!-- Copyright -->
-      <div id="copyright">
-        <ul>
-          <li>&copy; copyright reserved</li>
-          <li>
-            Design:
-            <a href="https://sheikhrakib.netlify.app/">Sheikh Rakib</a>
-          </li>
-        </ul>
-      </div>
+      </section>
     </div>
 
-    <!--Scripts Links-->
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/jquery.scrollex.min.js"></script>
-    <script src="../assets/js/jquery.scrolly.min.js"></script>
-    <script src="../assets/js/browser.min.js"></script>
-    <script src="../assets/js/breakpoints.min.js"></script>
-    <script src="../assets/js/util.js"></script>
-    <script src="../assets/js/main.js"></script>
-  </body>
+    <!-- Footer -->
+    <footer id="footer">
+      <section>
+        <form method="post" action="#">
+          <div class="fields">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email" />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea name="message" id="message" rows="3"></textarea>
+            </div>
+          </div>
+          <ul class="actions">
+            <li><input type="submit" value="Send Message" /></li>
+          </ul>
+        </form>
+      </section>
+      <section class="split contact">
+        <section class="alt">
+          <h3>
+            Email
+            <div class="icon">
+              <img src="https://img.icons8.com/nolan/64/email.png" />
+            </div>
+          </h3>
+          <p><a href="#">Rakibrakib0179@gmail.com</a></p>
+        </section>
+        <section>
+          <h3>
+            Phone
+            <div class="icon">
+              <img src="https://img.icons8.com/nolan/64/phone.png" />
+            </div>
+          </h3>
+          <p><a href="#">(+880) 179 229 900</a></p>
+        </section>
+        <section>
+          <h3>
+            Address
+            <div class="icon">
+              <img src="https://img.icons8.com/nolan/64/address.png" />
+            </div>
+          </h3>
+          <p>
+            1902 Los Santosh<br />
+            Tangail, Bangladesh
+          </p>
+        </section>
+        <section>
+          <h3>Social</h3>
+          <ul class="icons alt">
+            <li>
+              <a href="https://www.linkedin.com/in/md-rakib-sheikh-11b1a4226/" title="LinkedIn Profile"
+                class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/sheikh.rakibb?mibextid=ZbWKwL" title="Facebook Profile"
+                class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/rrr_express?igsh=MXdpbmprY21wN3Rt" title="Instagram Profile"
+                class="icon brands alt fa-instagram"><span class="label">Instagram</span></a>
+            </li>
+            <li>
+              <a href="https://github.com/sheikhrakib0?tab=repositories" title="GitHub Repositories"
+                class="icon brands alt fa-github"><span class="label">GitHub</span></a>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </footer>
+
+    <div id="footer-heading">
+      <h2>
+        <span class="crimsoned">S</span>heikh
+        <span class="crimsoned">R</span>akib
+      </h2>
+      <h6>Your complete data solution</h6>
+    </div>
+
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul>
+        <li>&copy; copyright reserved</li>
+        <li>
+          Design:
+          <a href="https://sheikhrakib.netlify.app/">Sheikh Rakib</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!--=================CHAT FUNCTIONALITY=================-->
+  <script>
+
+    let activeDbPath = null;
+    let files = JSON.parse(localStorage.getItem("uploadedFiles")) || [];
+
+    /* ================= INIT ================= */
+    window.onload = function () {
+      renderFileList();
+    };
+
+    /* ================= FILE UPLOAD ================= */
+
+    function triggerUpload() {
+      document.getElementById("fileInput").click();
+    }
+
+    document.getElementById("fileInput").addEventListener("change", async function () {
+      const file = this.files[0];
+      if (!file) return;
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      alert("Uploading & Processing...");
+
+      try {
+        const response = await fetch("https://rag-based-intelligent-data-assistant-uno2.onrender.com/api/v1/upload", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        const newFile = {
+          file_id: data.file_id,
+          db_path: data.db_path,
+          name: file.name
+        };
+        console.log("New File Data:", newFile);
+        files.push(newFile);
+        localStorage.setItem("uploadedFiles", JSON.stringify(files));
+
+        renderFileList();
+        alert("File uploaded successfully!");
+
+      } catch (error) {
+        alert("Upload failed!");
+        console.error(error);
+      }
+    });
+
+    /* ================= RENDER FILE LIST ================= */
+
+    function renderFileList() {
+      const fileList = document.getElementById("fileList");
+      fileList.innerHTML = "";
+
+      files.forEach((file, index) => {
+        const li = document.createElement("li");
+        li.innerText = file.name;
+
+        li.onclick = () => selectFile(index);
+
+        if (file.db_path === activeDbPath) {
+          // console.log("file.db_path:", file.db_path);
+          // console.log("activeDbPath:", activeDbPath);
+          li.classList.add("active");
+        }
+
+        fileList.appendChild(li);
+      });
+    }
+
+    /* ================= SELECT FILE ================= */
+
+    function selectFile(index) {
+      activeDbPath = files[index].db_path;
+      // console.log("Selected DB Path:", activeDbPath);
+      renderFileList();
+      clearChat();
+    }
+
+    /* ================= CHAT ================= */
+
+    async function sendMessage() {
+      if (!activeDbPath) {
+        alert("Please select a document first.");
+        return;
+      }
+
+      const input = document.getElementById("userInput");
+      const message = input.value.trim();
+      if (!message) return;
+
+      const chatBox = document.getElementById("chatMessages");
+
+      // Add user message
+      const userMsg = document.createElement("div");
+      userMsg.className = "message user";
+      userMsg.innerText = message;
+      chatBox.appendChild(userMsg);
+
+      input.value = "";
+
+      // Add loading message
+      const botMsg = document.createElement("div");
+      botMsg.className = "message bot";
+      botMsg.innerText = "Thinking...";
+      chatBox.appendChild(botMsg);
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      try {
+        const response = await fetch("https://rag-based-intelligent-data-assistant-uno2.onrender.com/api/v1/ask", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            question: message,
+            db_path: activeDbPath
+          })
+        });
+
+        const data = await response.json();
+        botMsg.innerText = data.answer;
+
+      } catch (error) {
+        botMsg.innerText = "Error fetching response.";
+        console.error(error);
+      }
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    /* ================= CLEAR CHAT ================= */
+
+    function clearChat() {
+      document.getElementById("chatMessages").innerHTML =
+        '<div class="message bot">Document selected. Ask your question.</div>';
+    }
+
+  </script>
+
+  <!--Scripts Links-->
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../assets/js/jquery.scrolly.min.js"></script>
+  <script src="../assets/js/browser.min.js"></script>
+  <script src="../assets/js/breakpoints.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+
 </html>
