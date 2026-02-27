@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Projects</title>
+  <title>AI Data Assistant</title>
   <link rel="shortcut icon" type="image/png" href="../images/logo-white.png" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -55,13 +55,12 @@
 
         <!-- ================= CHAT SECTION ================= -->
         <h2>AI Data Assistant</h2>
-        <h1>Note: db_path was error. corrected that but not deployed. have to deploy and check the response of the
-          upload process. then need to fix the selection error,and then need to check the ask route</h1>
 
         <div class="chat-container">
 
           <!-- Sidebar -->
-          <div class="chat-sidebar">
+          <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+          <div class="chat-sidebar" id="sidebar">
             <h3>Documents</h3>
 
             <input type="file" id="fileInput" hidden />
@@ -74,7 +73,8 @@
           <div class="chat-main">
 
             <div class="chat-header">
-              <h3>Chat with Document</h3>
+              <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+              <h3 class="chat-with-doc">Chat with Document</h3>
             </div>
 
             <div class="chat-messages" id="chatMessages">
@@ -98,30 +98,34 @@
 
         <h3>About this Project</h3>
         <p>
-          <span class="image left"><img src="../images/brain.png" alt="" /></span>A brain stroke, also known simply as a
-          stroke, occurs when the blood supply to a part of the brain is interrupted or reduced, preventing brain tissue
-          from getting the oxygen and nutrients it needs. Without immediate medical attention, brain cells begin to die
-          within minutes. There are two main types of strokes:
-          <b>Ischemic Stroke</b>(This is the most common type, accounting for about 87% of all strokes. It occurs when a
-          blood clot blocks or narrows a blood vessel in the brain.)
-          <b>Hemorrhagic Stroke</b>(This occurs when a weakened blood vessel in the brain ruptures and bleeds into the
-          surrounding tissue.)</br>
-          <b>Risk Factors</b><br>
-          Several factors increase stroke risk: <br>
-          * High blood pressure <br>
-          * Diabetes <br>
-          * Smoking <br>
-          * High cholesterol <br>
-          * Obesity <br>
-          * Sedentary lifestyle <br>
-          * Family history of stroke <br>
-          The model used for prediction here is Logistic Regression. Among several models such as Logistic Regression,
-          Decision Tree, Support Vector Machine, Random Forest, K-Nearest Neighbor, Naive Bayes, LightGBM, XGBoost. The
-          dataset was imbalanced, So we used a popular oversampling method called SMOTE to reduce that effect and
-          trained our models with the new balanced dataset. After that Logistic Regression outperformed all the models.
-          If you are interested please visit this link to see the full analysis. <br>
-          <a href="https://github.com/sheikhrakib0/Stroke-Prediction-Using-ML/blob/main/StrokePrediction.ipynb">Github
-            link</a>
+          <span class="image left"><img src="../images/chat_with_doc.png" alt="" /></span>
+          A Retrieval-Augmented Generation (RAG) web API built using
+          FastAPI, LangChain, and Google Gemini. This project allows you to
+          upload documents, store their embeddings, and ask natural language
+          questions about the uploaded content. The system retrieves
+          relevant information from the documents and generates accurate
+          responses using advanced language models. Key features include
+          document upload, embedding storage, and a question-answering
+          interface powered by Google Gemini. </br>
+          <b>Features: </b><br>
+          * Upload documents (PDF, DOCX, TXT) <br>
+          * Store document embeddings in a vector database using FAISS<br>
+          * Ask questions in natural language and get gemini-generated responses<br>
+          * Get accurate answers based on document content <br>
+          * Built with FastAPI for high performance and scalability <br>
+          * Uses LangChain for seamless integration of language models and vector databases <br>
+          <b>Tech Stack: </b><br>
+          * Backend: FastAPI<br>
+          * Framework: LangChain<br>
+          * LLM Model: Google Gemini<br>
+          * Vector Database: FAISS<br>
+          * Deployment: Render.com<br>
+          * Frontend: HTML/CSS/JavaScript<br>
+
+          If you are interested please visit this link to see the backend. <br>
+          <a href="https://github.com/sheikhrakib0/Rag-based-Intelligent-Data-Assistant?tab=readme-ov-file">Github
+            link</a> </br>
+          <a href="https://rag-based-intelligent-data-assistant-uno2.onrender.com/docs#/">Live API Link</a>
         </p>
 
         <hr />
@@ -239,6 +243,11 @@
 
   <!--=================CHAT FUNCTIONALITY=================-->
   <script>
+    // for toggling sidebar on mobile
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+      document.getElementById("overlay").classList.toggle("active");
+    }
 
     let activeDbPath = null;
     let files = JSON.parse(localStorage.getItem("uploadedFiles")) || [];
@@ -276,7 +285,7 @@
           db_path: data.db_path,
           name: file.name
         };
-        console.log("New File Data:", newFile);
+        //console.log("New File Data:", newFile);
         files.push(newFile);
         localStorage.setItem("uploadedFiles", JSON.stringify(files));
 
@@ -302,8 +311,6 @@
         li.onclick = () => selectFile(index);
 
         if (file.db_path === activeDbPath) {
-          // console.log("file.db_path:", file.db_path);
-          // console.log("activeDbPath:", activeDbPath);
           li.classList.add("active");
         }
 
@@ -315,7 +322,6 @@
 
     function selectFile(index) {
       activeDbPath = files[index].db_path;
-      // console.log("Selected DB Path:", activeDbPath);
       renderFileList();
       clearChat();
     }
@@ -357,13 +363,13 @@
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            question: message,
+            query: message,
             db_path: activeDbPath
           })
         });
 
         const data = await response.json();
-        botMsg.innerText = data.answer;
+        botMsg.innerText = data.response || "No response from API.";
 
       } catch (error) {
         botMsg.innerText = "Error fetching response.";

@@ -7,6 +7,7 @@
   border-radius: 8px;
   overflow: hidden;
   margin-top: 20px;
+  position: relative;
 }
 
 /* Sidebar */
@@ -17,7 +18,56 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
+  z-index: 10;
 }
+
+@media (max-width: 768px) {
+  .chat-sidebar {
+    position: absolute;
+    height: 100%;
+    width: 70%;
+    transform: translateX(-100%);
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+  }
+  .chat-sidebar.active {
+    transform: translateX(0);
+  }
+  .chat-with-doc {
+    display: none;
+  }
+}
+
+/* Class to hide sidebar */
+.chat_sidebar.collapsed {
+    width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border: none;
+    }
+
+.toggle-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  }
+  
+.toggle-btn:hover {
+  background: #f0f0f0;
+  }
+  
+@media (max-width: 768px) {
+  .toggle-btn {
+    display: block;
+    }
+  }
+
 
 .chat-sidebar h3 {
   margin-bottom: 10px;
@@ -109,3 +159,16 @@
   border: none;
   cursor: pointer;
 }
+
+/* Overlay for mobile when sidebar is open */
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 5;
+    }
+
+@media (max-width: 768px) {
+    .overlay.active { display: block; }
+    }
