@@ -18,15 +18,15 @@
   <div id="wrapper">
     <!-- Header -->
     <header id="header">
-      <a href="index.html" class="logo">Hire Me</a>
+      <a href="../index.html" class="logo">Hire Me</a>
     </header>
 
     <!-- Nav -->
     <nav id="nav">
       <ul class="links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li class="active"><a href="projects.html">Projects</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li class="active"><a href="../projects.html">Projects</a></li>
       </ul>
       <ul class="icons">
         <li>
@@ -64,7 +64,7 @@
             <h3>Documents</h3>
 
             <input type="file" id="fileInput" hidden />
-            <button onclick="triggerUpload()">+ Upload File</button>
+            <button id="upload-button" onclick="triggerUpload()">+ Upload File</button>
 
             <ul id="fileList"></ul>
           </div>
@@ -85,12 +85,15 @@
 
             <div class="chat-input">
               <input type="text" id="userInput" placeholder="Ask a question..." />
-              <button onclick="sendMessage()">Send</button>
+              <button id="user-send" onclick="sendMessage()">Send</button>
             </div>
 
           </div>
 
         </div>
+        <p><b>NB: </b>If this is the first time you are using this application, there will be needed some time to wake
+          up the backend server. Please be patient.</p>
+
         <!-- ================= END CHAT SECTION ================= -->
 
 
