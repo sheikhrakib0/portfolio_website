@@ -85,7 +85,7 @@
 
             <div class="chat-input">
               <input type="text" id="userInput" placeholder="Ask a question..." />
-              <button id="user-send" onclick="sendMessage()">Send</button>
+              <button id="user_send" onclick="sendMessage()">Send</button>
             </div>
 
           </div>
@@ -325,6 +325,7 @@
 
     function selectFile(index) {
       activeDbPath = files[index].db_path;
+      // console.log("Selected DB Path:", activeDbPath);
       renderFileList();
       clearChat();
     }
