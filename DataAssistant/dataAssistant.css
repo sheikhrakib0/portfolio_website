@@ -36,10 +36,6 @@
   .chat-with-doc {
     display: none;
   }
-  .chat-container {
-    width: 100%;
-    height: 500px;
-  }
 }
 
 /* Class to hide sidebar */
