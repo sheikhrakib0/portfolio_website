@@ -56,6 +56,16 @@
         <!-- ================= CHAT SECTION ================= -->
         <h2>AI Data Assistant</h2>
 
+        <div>
+          <button id="wake-up-button" onclick="wakeUpBackend()">Wake Up the Backend</button>
+          <div id="spinner" style="display: none;">
+            <div class="spinner-anime">
+            </div>
+            <p>Processing your request...</p>
+          </div>
+          <p id="wake-up-message"></p>
+        </div>
+
         <div class="chat-container">
 
           <!-- Sidebar -->
@@ -246,6 +256,25 @@
 
   <!--=================CHAT FUNCTIONALITY=================-->
   <script>
+    // Wake up the backend server
+    async function wakeUpBackend() {
+      const messageEl = document.getElementById("wake-up-message");
+      document.getElementById('spinner').style.display = 'block';
+
+      try {
+        const response = await fetch("https://rag-based-intelligent-data-assistant-uno2.onrender.com/health");
+        document.getElementById('spinner').style.display = 'none';
+        if (response.ok) {
+          data = await response.json();
+          messageEl.innerText = `Backend is awake! \nStatus: ${data.status}, \n Message: ${data.message}`;
+        } else {
+          messageEl.innerText = "Failed to wake up the backend. Please try again.";
+        }
+      } catch (error) {
+        messageEl.innerText = "Error waking up the backend. Please check your connection and try again.";
+        console.error(error);
+      }
+    }
     // for toggling sidebar on mobile
     function toggleSidebar() {
       document.getElementById("sidebar").classList.toggle("active");
