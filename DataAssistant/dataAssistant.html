@@ -101,8 +101,6 @@
           </div>
 
         </div>
-        <p><b>NB: </b>If this is the first time you are using this application, there will be needed some time to wake
-          up the backend server. Please be patient.</p>
 
         <!-- ================= END CHAT SECTION ================= -->
 
@@ -128,12 +126,12 @@
           * Built with FastAPI for high performance and scalability <br>
           * Uses LangChain for seamless integration of language models and vector databases <br>
           <b>Tech Stack: </b><br>
-          * Backend: FastAPI<br>
-          * Framework: LangChain<br>
-          * LLM Model: Google Gemini<br>
-          * Vector Database: FAISS<br>
-          * Deployment: Render.com<br>
-          * Frontend: HTML/CSS/JavaScript<br>
+          <b>Backend:</b> FastAPI<br>
+          <b>Framework:</b> LangChain<br>
+          <b>LLM Model:</b> Google Gemini<br>
+          <b>Vector Database:</b> FAISS<br>
+          <b>Deployment:</b> Render.com<br>
+          <b>Frontend:</b> HTML/CSS/JavaScript<br>
 
           If you are interested please visit this link to see the backend. <br>
           <a href="https://github.com/sheikhrakib0/Rag-based-Intelligent-Data-Assistant?tab=readme-ov-file">Github
@@ -144,14 +142,26 @@
         <hr />
 
         <!-- Preformatted Code -->
-        <h2>Preformatted</h2>
-        <pre><code>i = 0;
-          while (!deck.isInOrder()) {
-          print 'Iteration ' + i;
-          deck.shuffle();
-           i++;
+        <h2>Backend Code</h2>
+        <pre><code>
+        # main.py file
+        async def root():
+          return {
+            "message": "Welcome to the Rag-based Data Assistant API. Use /api/v1/upload to upload documents and /api/v1/ask to query them.",
+            "docs": "/docs",
+            "status": "API is running"
+      }
+      #health route
+      @app.get("/health")
+        async def health_check():
+          return {
+            "status": "healthy",
+            "message": "The Rag-based Data Assistant API is operational."
           }
-          print 'It took ' + i + ' iterations to sort the deck.';
+
+      # two api endpoints
+      app.include_router(upload.router, prefix="/api/v1", tags=["Upload"])
+      app.include_router(query.router, prefix="/api/v1", tags=["Query"])
         </code></pre>
       </section>
     </div>
@@ -266,7 +276,7 @@
         document.getElementById('spinner').style.display = 'none';
         if (response.ok) {
           data = await response.json();
-          messageEl.innerText = `Backend is awake! \nStatus: ${data.status}, \n Message: ${data.message}`;
+          messageEl.innerText = `Backend is awake!\nStatus: ${data.status},\nMessage: ${data.message}`;
         } else {
           messageEl.innerText = "Failed to wake up the backend. Please try again.";
         }
@@ -280,7 +290,7 @@
       document.getElementById("sidebar").classList.toggle("active");
       document.getElementById("overlay").classList.toggle("active");
     }
-
+    // to upload a file
     let activeDbPath = null;
     let files = JSON.parse(localStorage.getItem("uploadedFiles")) || [];
 
@@ -360,6 +370,14 @@
     }
 
     /* ================= CHAT ================= */
+
+    // for event listener
+    const input = document.getElementById("userInput");
+    input.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        sendMessage();
+      }
+    });
 
     async function sendMessage() {
       if (!activeDbPath) {
