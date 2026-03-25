@@ -292,7 +292,7 @@
     }
     // to upload a file
     let activeDbPath = null;
-    let files = JSON.parse(localStorage.getItem("uploadedFiles")) || [];
+    let files = JSON.parse(sessionStorage.getItem("uploadedFiles")) || [];
 
     /* ================= INIT ================= */
     window.onload = function () {
@@ -329,7 +329,7 @@
         };
         //console.log("New File Data:", newFile);
         files.push(newFile);
-        localStorage.setItem("uploadedFiles", JSON.stringify(files));
+        sessionStorage.setItem("uploadedFiles", JSON.stringify(files));
 
         renderFileList();
         alert("File uploaded successfully!");
